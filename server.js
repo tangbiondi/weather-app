@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 const request = require('request');
 const apiKey = 'c0f649a1a2c7f7e844995e83fb3f527e';
 
+const PORT = process.env.PORT || 5000
+
 app.use(express.static('public'));
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -31,6 +33,6 @@ app.post('/', function (req, res) {
   });
 })
 
-app.listen(443, function () {
-  //console.log('Example app listening on port 3000!')
+app.listen(PORT, function () {
+  console.log('Example app listening on port ' + PORT)
 })
